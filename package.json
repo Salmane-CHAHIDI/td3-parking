@@ -1,0 +1,13 @@
+{
+  "name": "td3",
+  "scripts": {
+    "dev": "bun run --hot src/index.ts"
+  },
+  "dependencies": {
+    "hono": "^4.6.3",
+    "td3": "file:"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  }
+}
