@@ -1,10 +1,12 @@
+// src/models/Spot.ts
+import { generateRandomNumberId } from '../utils/generateRandomNumberId';
 
-export class Spot {
-    id: number;
-    parking_id: string;
+export default class Spot {
+  id: number;
+  parking_id: number;
 
-    constructor(id: number, parking_id: string) {
-        this.id = id;
-        this.parking_id = parking_id;
-    }
+  constructor(parking_id: number) {
+    this.id = generateRandomNumberId();
+    this.parking_id = parking_id;
+  }
 }

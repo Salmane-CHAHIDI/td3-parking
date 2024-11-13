@@ -9,12 +9,17 @@
     "@types/validator": "^13.12.2",
     "hono": "^4.6.3",
     "lodash": "^4.17.21",
+    "prisma": "^5.22.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sqlite": "^5.1.1",
     "td3": "file:",
     "test": "^3.3.0",
     "uuid": "^10.0.0",
     "validator": "^13.12.0"
   },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "@types/react": "^18.3.11"
   }
 }

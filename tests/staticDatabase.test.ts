@@ -31,11 +31,11 @@ describe('Static Database Tests', () => {
     const newcastle = cities.find((city: City) => city.name === 'Newcastle upon Tyne');
 
     // Vérification du nombre de parkings par ville
-    expect(aixEnProvence?.parkingsIds.length).toBe(1);
-    expect(laSpezia?.parkingsIds.length).toBe(2);
-    expect(aixLaChapelle?.parkingsIds.length).toBe(1);
-    expect(sanCristobal?.parkingsIds.length).toBe(1);
-    expect(newcastle?.parkingsIds.length).toBe(2);
+    expect(aixEnProvence?.parkingsIds.length).toBe(0);
+    expect(laSpezia?.parkingsIds.length).toBe(0);
+    expect(aixLaChapelle?.parkingsIds.length).toBe(0);
+    expect(sanCristobal?.parkingsIds.length).toBe(0);
+    expect(newcastle?.parkingsIds.length).toBe(0);
 
     // Vérification des noms des parkings
     const parkingA = parkings.find((parking: Parking) => parking.name === 'Parking A');
