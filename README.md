@@ -92,6 +92,7 @@ Une fois SQLite installé, la base de données est créée sous le nom de `parki
 - **cities** : Cette table stocke les informations sur les villes, telles que leur nom, leur localisation et leur pays.
 - **parkings** : Cette table contient des informations sur les parkings, telles que leur nom, leur emplacement, le nombre de places disponibles, leur tarif horaire et leur statut (ouvert ou fermé).
 - **parks** : Cette table enregistre les transactions de stationnement, avec les horaires de début et de fin, ainsi que les informations relatives à la place de stationnement et au véhicule.
+- **fonctions supplémentaires** : L'insertion dans la base de données par des fonctions contre injections.
 
 Chaque table est définie avec des relations de clé étrangère pour assurer l'intégrité des données, par exemple, un parking est lié à une ville spécifique via la clé `city_id`.
 
