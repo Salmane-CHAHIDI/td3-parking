@@ -15,6 +15,9 @@ initial-scale=1.0"
       <title>
       ${pageTitle}
       </title>
+      <link rel="stylesheet" href="../../../static/style.css" />
+      <link rel="stylesheet" href="../../../static/normalisation.css" />
+      <link rel="stylesheet" href="../../../static/Milligram.css" />
     </head>
     <body>
       ${children}
