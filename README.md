@@ -60,6 +60,7 @@ C:.
     │
     └───shared
             Layout.tsx
+
 ---
 
 ## **Étapes du projet**
