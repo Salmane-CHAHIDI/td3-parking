@@ -1,10 +1,13 @@
 // src/data/staticDatabase.ts
-import {City} from '../models/City';
-import {Parking} from '../models/Parking';
+
+// Importation des modèles City, Parking et GPS
+import { City } from '../models/City';
+import { Parking } from '../models/Parking';
 import { GPS } from '../types/gps';
 
-
+// Définition d'un tableau statique de villes
 const cities: City[] = [
+  // Création de différentes villes avec leurs coordonnées GPS
   new City('Aix-en-Provence', 'France', { latitude: 43.533329, longitude: 5.43333 }),
   new City('La Spezia', 'Italie', { latitude: 44.238366, longitude: 9.6912326 }),
   new City('Aix-la-Chapelle', 'Allemagne', { latitude: 50.776351, longitude: 6.083862 }),
@@ -12,7 +15,9 @@ const cities: City[] = [
   new City('Newcastle upon Tyne', 'Angleterre', { latitude: 54.9738474, longitude: -1.6131572 }),
 ];
 
+// Définition d'un tableau statique de parkings
 const parkings: Parking[] = [
+  // Création de différents parkings en associant chaque parking à une ville
   new Parking('Parking A', cities[0].id, { latitude: 43.533329, longitude: 5.43333 }, 100, true, 4.5),
   new Parking('Parking B', cities[1].id, { latitude: 44.238366, longitude: 9.6912326 }, 50, true, 3),
   new Parking('Parking C', cities[1].id, { latitude: 44.238366, longitude: 9.6912326 }, 80, true, 2.5),
@@ -22,4 +27,5 @@ const parkings: Parking[] = [
   new Parking('Parking G', cities[4].id, { latitude: 54.9738474, longitude: -1.6131572 }, 90, true, 3.2),
 ];
 
+// Exportation des données statiques (villes et parkings) pour qu'elles puissent être utilisées dans d'autres parties du projet
 export { cities, parkings };
