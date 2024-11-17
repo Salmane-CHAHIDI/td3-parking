@@ -1,10 +1,10 @@
 
 ---
 ## **Membres de l'équipe**
-  Salmane CHAHIDI
-  Reda Mohamed Lahmar
-  Theo Decuypere
-  
+  - Salmane CHAHIDI
+  - Reda Mohamed Lahmar
+  - Theo Decuypere
+
 ## **Étapes du projet**
 
 ### **Étape 1 : Initialisation du projet**
