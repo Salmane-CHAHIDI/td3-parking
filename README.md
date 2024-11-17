@@ -1,39 +1,86 @@
-# TD 03 - Parking
+# **TD03 - Parking**
 
-## Répartition des Tâches
+## **Introduction**
+Bienvenue dans le projet **TD03 - Parking**, réalisé dans le cadre du module **Programmation Web** (L3 MIASHS - IDMC, Université de Lorraine, 2024/2025).  
+Ce projet a pour objectif de développer une application web de gestion de parkings en adoptant une architecture **MVC** (Model-View-Controller), avec le framework **Hono**, **TypeScript**, et l'environnement **Bun**.
 
-Pour le projet TD 03 - Parking, nous avons réparti les tâches entre les membres du groupe afin d'optimiser notre collaboration et de nous assurer que chaque partie du projet soit bien couverte. Voici la répartition des responsabilités :
+## **Membres de l'équipe**
+- Prénom Nom 1
+- Prénom Nom 2 (ajoutez vos noms ici)
 
-### Membre 1 : Routage et Contrôleur de Base (2.1)
-- **Création de la branche Git** : Création de la branche nommée `etape02`.
-- **Implémentation du HomeController** :
-  - Création du fichier `./src/controllers/HomeController.ts`.
-  - Suivi de la documentation de Hono pour créer le contrôleur et la vue HTML avec le contenu requis (titre, image, texte, liens).
-  - Test de la route GET `/` pour s'assurer que la page s'affiche correctement.
-- **Ressources Statistiques** : Ajout de la balise pour servir le fichier `parking.png` à partir du dossier `./static`.
-- **Ajout de la CSS** : Intégration des liens vers les bibliothèques CSS dans la vue HTML.
+---
 
-### Membre 2 : Routage Avancé et Vue Dynamique (2.2)
-- **Création de ReadAllCitiesController** :
-  - Création du fichier `./src/controllers/parking/ReadAllCitiesController.ts`.
-  - Association du contrôleur à la route GET `/parkings`.
-- **Génération de la Vue Dynamique** :
-  - Création du fichier `./src/views/city/ReadAllCitiesView.ts` pour générer dynamiquement la vue.
-  - Génération d'une liste non ordonnée des villes à partir des données fournies.
-- **Tests de Route** : Test de la nouvelle route `/parkings` avec un outil comme Postman ou Insomnia.
+## **Structure du projet**
 
-### Membre 3 : Vue HTML Dynamique avec TSX (2.3) et Gestion des Erreurs (2.4)
-- **Création du Layout** :
-  - Création du fichier `./src/views/shared/Layout.tsx`.
-  - Utilisation du composant Layout pour structurer les vues HTML de base.
-- **Adaptation de ReadAllCitiesView** :
-  - Conversion du fichier `ReadAllCitiesView` en `.tsx` et adaptation du contenu pour utiliser le Layout.
-  - Gestion de la dynamique de la liste avec des liens vers les pages dédiées aux villes.
-- **Gestion des Erreurs** :
-  - Implémentation de la gestion des erreurs 404 et 500 dans le fichier `index.ts`.
-  - Utilisation du middleware pour gérer le trailing slash et assurer que les routes fonctionnent correctement.
+### **Arborescence**
 
-## Suivi et Collaboration
-- **Réunions de Synchronisation** : Des réunions régulières sont prévues pour discuter de l'avancement, résoudre les problèmes et intégrer les modifications.
-- **Documentation** : Chaque membre documentera son travail dans ce README, en ajoutant des détails sur les tests effectués et les liens pertinents.
+---
 
+## **Étapes du projet**
+
+### **Étape 1 : Initialisation du projet**
+1. **Création du projet avec Bun**  
+   Le projet a été initialisé avec Bun et un serveur local a été démarré pour vérifier son bon fonctionnement.
+
+2. **Structure du projet**  
+   Mise en place de l'architecture du projet et des dossiers nécessaires à une bonne organisation.
+
+3. **Fonctions utilitaires**  
+   - `toSlug` : Convertit une chaîne de texte en slug, un identifiant URL-friendly.
+   - `generateRandomNumberId` : Génère un identifiant numérique aléatoire de 6 chiffres.
+
+4. **Modèles créés**  
+   - **City** : Représente une ville avec des parkings associés.
+   - **Parking** : Représente un parking avec des places.
+   - **Spot** : Représente une place de parking.
+   - **Park** : Représente une réservation de place de parking.
+
+5. **Base de données statique**  
+   Une base de données simulée est présente dans `src/data/staticDatabase.ts`, contenant les informations suivantes :
+   - Aix-en-Provence (France) : 1 parking, 100 places.
+   - La Spezia (Italie) : 2 parkings, 50 et 80 places.
+   - Aix-la-Chapelle (Allemagne) : 1 parking, 40 places.
+   - San Cristóbal de La Laguna (Espagne) : 1 parking, 70 places.
+   - Newcastle upon Tyne (Angleterre) : 2 parkings, 60 et 90 places.
+
+6. **Tests unitaires**  
+   Des tests ont été réalisés pour vérifier le bon fonctionnement des fonctions utilitaires `toSlug` et `generateRandomNumberId`.
+
+---
+
+### **Étape 2 : Mise en place de l'architecture MVC**
+
+#### **2.1 : Routage basique, contrôleur et rendu HTML statique**
+- **Routage** : Création des routes dans `src/routes/parkingRoutes.ts` et `src/routes/cityRoutes.ts`.
+- **Contrôleur HomeController** : 
+  - Affiche une page statique avec un titre, une image et une description.  
+  - Des liens vers les pages **Our Cities** (`/cities`) et **Our Car Parks** (`/parkings`).
+  - CSS distant avec les bibliothèques **Roboto** et **Milligram** pour améliorer le style.
+
+#### **2.2 : Routage avancé et vue HTML dynamique**
+- **Contrôleur ReadAllCitiesController** : 
+  - Route `/cities` pour afficher une liste dynamique des villes.
+- **Vue dynamique ReadAllCitiesView** : 
+  - Génère une liste HTML des villes avec des liens vers les pages `/cities/{slug}`.
+
+#### **2.3 : Vue HTML dynamique avec TSX**
+- **Composant Layout** : Structure HTML de base en TSX pour réutilisation sur plusieurs pages.
+- **Vue ReadAllCitiesView.tsx** : 
+  - Affiche dynamiquement des liens pour chaque ville.
+- **Contrôleur ReadOneCityController** : 
+  - Route `/cities/{slug}` pour afficher les détails d'une ville et ses parkings associés.
+
+#### **2.4 : Gestion des erreurs**
+- **Middleware Trailing Slash** : Uniformisation des URI avec ou sans slash final.
+- **Gestion des erreurs HTTP** :
+  - Pages d'erreur HTML personnalisées pour **404** et **500**.
+  - Gestion centralisée des erreurs pour les entités non trouvées (villes ou parkings).
+
+---
+
+### **Étape 3 : Base de données SQLite**
+
+#### **1. Installation et configuration de SQLite**
+- **Ajout de la dépendance** :
+  ```bash
+  bun add bun:sqlite
