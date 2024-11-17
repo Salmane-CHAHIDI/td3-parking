@@ -5,15 +5,33 @@ Bienvenue dans le projet **TD03 - Parking**, réalisé dans le cadre du module *
 Ce projet a pour objectif de développer une application web de gestion de parkings en adoptant une architecture **MVC** (Model-View-Controller), avec le framework **Hono**, **TypeScript**, et l'environnement **Bun**.
 
 ## **Membres de l'équipe**
-- Prénom Nom 1
-- Prénom Nom 2 (ajoutez vos noms ici)
+- Salmane CHAHIDI
+- Theo Decuypere
+- Reda Mohamed Lahmar
 
 ---
 
 ## **Structure du projet**
 
 ### **Arborescence**
-
+C:.
+│   index.ts
+│
+├───data
+│       staticDatabase.ts
+│
+├───models
+│       City.ts
+│       Park.ts
+│       Parking.ts
+│       Spot.ts
+│
+├───types
+│       gps.ts
+│
+└───utils
+        generateRandomNumberId.ts
+        toSlug.ts
 ---
 
 ## **Étapes du projet**
